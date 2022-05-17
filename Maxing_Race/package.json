@@ -10,7 +10,7 @@
         "lint:fix": "eslint --fix",
         "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
     },
-    "proxy": "https://apps.runescape.com/runemetrics/profile",
+    "proxy": "https://cat-fact.herokuapp.com/",
     "dependencies": {
         "got": "^12.0.4",
         "react": "^18.0.0",
