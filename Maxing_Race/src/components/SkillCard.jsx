@@ -31,18 +31,18 @@ const id_dict = {
 
 const SkillCard = ({ Skills }) => {
   return (
-    <div className="skills">
+    <div className="movie">
       <div>
         <p>Rank: {Skills.rank.toLocaleString('en-US')}</p>
       </div>
       <div>
-        {/* <img
-                    src={
-                        `./img/${id_dict[Skills.id]}` == 'NULL'
-                            ? `./img/${id_dict[Skills.id]}`
-                            : 'https://via.placeholder.com/400'
-                    }
-                alt={id_dict[Skills.id]}></img>*/}
+        <img
+          src={
+            `../img/${id_dict[Skills.id]}` !== 'NULL'
+              ? `../img/${id_dict[Skills.id]}`
+              : 'https://via.placeholder.com/400'
+          }
+          alt={id_dict[Skills.id]}></img>
       </div>
       <div>
         <span>{id_dict[Skills.id]}</span>

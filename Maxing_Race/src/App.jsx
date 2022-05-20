@@ -2,9 +2,11 @@ import { useEffect, useState } from 'react';
 import React from 'react';
 import './css/App.css';
 
-import SkillCard from './components/SkillCard';
+//component & image imports
+import SkillTable from './components/SkillTable';
 import SearchIcon from './img/search.svg';
 
+//API endpoints & cors workaround
 const profile_URL = 'https://apps.runescape.com/runemetrics/profile?user=';
 const cors_server = 'https://vincis-cors.herokuapp.com/';
 
@@ -12,6 +14,7 @@ const App = () => {
   const [player, setPlayer] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
+  // Search a players skills
   const searchPlayer = async (PlayerName) => {
     const response = await fetch(`${cors_server}${profile_URL}${PlayerName}`);
     const data = await response.json();
@@ -44,11 +47,7 @@ const App = () => {
         />
       </div>
       {player?.length > 0 ? (
-        <div className="container">
-          {React.Children.toArray(
-            player.map((skill) => <SkillCard Skills={skill} />)
-          )}
-        </div>
+        <SkillTable player={player} />
       ) : (
         <div className="empty">
           <h2>No skills found</h2>
