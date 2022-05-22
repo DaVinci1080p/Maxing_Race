@@ -35,6 +35,7 @@ const id_dict = {
 function SkillTable({ player }) {
   const DisplayData = React.Children.toArray(
     player.map((info) => {
+      const xp = (info.xp / 10) | 0;
       return (
         <tr>
           <td>
@@ -48,7 +49,7 @@ function SkillTable({ player }) {
           </td>
           <td>{id_dict[info.id]}</td>
           <td>{info.level}</td>
-          <td>{info.xp.toLocaleString('en-US')}</td>
+          <td>{xp.toLocaleString('en-US')}</td>
           <td>{info.rank.toLocaleString('en-US')}</td>
         </tr>
       );
